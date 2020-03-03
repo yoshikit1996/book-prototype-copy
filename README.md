@@ -34,7 +34,7 @@ $ brew install postgresql
 $ cargo run
 
 # gRPCリクエスト送信
-$ grpcurl -proto src/grpc/models.proto -d '{"name":"Kiryu Coco"}' -plaintext localhost:50051 user.UserService.NewUser
+$ sh ./scripts/grpc_request.sh
 
 # テストを常に走らせる
 $ cargo watch -x test
