@@ -6,7 +6,7 @@ edition = "2018"
 
 [dependencies]
 bytes        = "0.5"
-hocon        = "0.3.2"
+config = "0.9"
 postgres     = "0.17.1"
 prost        = "0.6"
 prost-derive = "0.6"

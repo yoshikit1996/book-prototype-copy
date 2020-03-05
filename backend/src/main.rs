@@ -1,18 +1,19 @@
+use std::collections::HashMap;
 use tonic::transport::Server;
-use hocon::HoconLoader;
+use config::{Config, File};
 
 mod contextmap;
-
 use contextmap::user;
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let conf = HoconLoader::new()
-        .load_file("src/conf/http.conf")?
-        .hocon()?;
 
-    let host = conf["host"].as_string().unwrap();
-    let port = conf["port"].as_string().unwrap();
+    let mut config_source = Config::default();
+    config_source.merge(File::with_name("src/conf/http.json")).unwrap();
+    let conf = config_source.try_into::<HashMap<String, String>>().unwrap();
+
+    let host = conf.get("host").unwrap();
+    let port = conf.get("port").unwrap();
     let ip_address = format!("{}:{}", host, port);
 
     Server::builder()
