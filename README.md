@@ -1,44 +1,25 @@
-# book-prototype
+# book
 
-### 開発ツールのインストール
+### ディレクトリ構成
 
-```
+- `backend`
 
-# Rustのインストール
+バックエンドの実装を置く場所。
+詳細は`backend/README.md`を参照。
 
-$ curl https://sh.rustup.rs -sSf | sh
+- `frontend`
 
-# cargoをPATHに追加(非zsh環境の場合は適宜書き換える必要あり)
-$ echo "export PATH=\$PATH:\$HOME/.cargo/bin" >> ~/.zprofile
+フロントエンドの実装を置く場所。
+詳細は`frontend/README.md`を参照。
 
-$ rustup install 1.41.1
-$ rustup default 1.41.1
+- `grpc`
 
-# gRPCクライアントのインストール
+`proto`ファイルを置く場所。
 
-$ brew install grpcurl
+- `docker`
 
-# テストランナー
+docker関連のファイルを置く場所。
 
-$ cargo install cargo-watch
+- `Makefile`
 
-# PostgreSQL
-
-$ brew install postgresql 
-```
-
-### 開発に使用するコマンド等
-
-```
-# Webサーバ起動
-$ cargo run
-
-# gRPCリクエスト送信
-$ sh ./scripts/grpc_request.sh
-
-# テストを常に走らせる
-$ cargo watch -x test
-
-# PostgreSQL接続
-$ psql -h localhost -U root
-```
+開発やCI/CDに使用するスクリプトを定義するためのファイル。

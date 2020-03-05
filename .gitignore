@@ -2,7 +2,10 @@
 .idea/**
 *.iml
 
-# Rust
-/target/
-Cargo.lock
+# Backend
+target
+backend/Cargo.lock
 **/*.rs.bk
+
+# Frontend
+node_modules
