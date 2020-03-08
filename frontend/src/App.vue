@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <p><router-link to="/">Home</router-link></p>
+      <p><router-link to="/auth">新規登録 & ログイン</router-link></p>
     </div>
     <router-view/>
   </div>
@@ -28,5 +28,9 @@
       color: #42b983;
     }
   }
+}
+
+ul {
+  list-style: none;
 }
 </style>
