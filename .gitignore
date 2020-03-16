@@ -8,7 +8,12 @@ backend/Cargo.lock
 **/*.rs.bk
 
 # Frontend
-node_modules
+frontend/node_modules
+frontend/dist
 
 # credentials
 credentials.json
+
+# firebase
+.firebaserc
+firebase.json

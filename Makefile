@@ -4,7 +4,14 @@ postgres:
 
 # フロントエンド
 vue_serve:
-	cp conf/credentials.json frontend/src/conf && cd frontend && npm run serve;
+	cp conf/credentials.json frontend/src/conf && cd frontend && npm run serve
+
+vue_build:
+	cp conf/credentials.json frontend/src/conf && cd frontend && npm run build
+
+firebase_start:
+	make vue_build
+	firebase emulators:start
 
 # その他
 test_request:

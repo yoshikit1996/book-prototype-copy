@@ -3,13 +3,10 @@
 ## 開発ツールのインストール
 
 ```shell
-# node & npmのインストール
-$ curl -L git.io/nodebrew | perl - setup$ nodenv install 13.8.0
-# bashの人はよしなに対応してください
-$ echo "export PATH=\$HOME/.nodebrew/current/bin:\$PATH" >> ~/.zprofile
-$ source ~/.zprofile
-$ nodebrew install v13.8.0
-$ nodebrew use v13.8.0
+$ nvm install v13.8.0
+$ nvm use v13.8.0
+$ npm install -g @vue/cli
+$ npm install -g firebase-tools
 ```
 
 ## Project setup
