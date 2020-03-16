@@ -9,8 +9,12 @@ vue_serve:
 vue_build:
 	cp conf/credentials.json frontend/src/conf && cd frontend && npm run build
 
+# Cloud function
+functions_build:
+	cd functions && npm run build
+
 firebase_start:
-	make vue_build
+	make vue_build && make functions_build
 	firebase emulators:start
 
 # その他

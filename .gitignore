@@ -11,9 +11,16 @@ backend/Cargo.lock
 frontend/node_modules
 frontend/dist
 
+# Cloud functions
+functions/**/*.js
+functions/**/*.js.map
+functions/**/typings
+functions/node_modules
+
 # credentials
 credentials.json
 
 # firebase
 .firebaserc
 firebase.json
+firebase-debug.log
