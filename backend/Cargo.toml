@@ -5,12 +5,13 @@ authors = ["???"]
 edition = "2018"
 
 [dependencies]
-tokio = { version = "0.2", features = ["full"] }
-tonic        = "0.1.1"
 bytes        = "0.5"
+config = "0.9"
+postgres     = "0.17.1"
 prost        = "0.6"
 prost-derive = "0.6"
-postgres     = "0.17.1"
+tokio = { version = "0.2", features = ["full"] }
+tonic        = "0.1.1"
 
 [build-dependencies]
 tonic-build  = "0.1.1"

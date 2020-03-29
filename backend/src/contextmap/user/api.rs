@@ -1,9 +1,9 @@
-use tonic::{transport::Server, Request, Response, Status};
+use tonic::{Request, Status, Response};
 
-use user::user_service_server::{UserService, UserServiceServer};
+use user::user_service_server::{ UserService, UserServiceServer };
 use user::{NewUserResponse, NewUserRequest};
 
-pub mod user {
+mod user {
     tonic::include_proto!("user");
 }
 
@@ -23,15 +23,7 @@ impl UserService for NewUserServiceImpl {
     }
 }
 
-#[tokio::main]
-async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let addr = "[::1]:50051".parse().unwrap();
-    let greeter = NewUserServiceImpl::default();
-
-    Server::builder()
-        .add_service(UserServiceServer::new(greeter))
-        .serve(addr)
-        .await?;
-
-    Ok(())
+pub fn new() -> UserServiceServer<NewUserServiceImpl> {
+    let service = NewUserServiceImpl::default();
+    UserServiceServer::new(service)
 }

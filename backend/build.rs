@@ -18,7 +18,7 @@ fn paths(root_path: &str) -> Vec<String> {
 }
 
 fn main() {
-    for _path in paths("./src/") {
+    for _path in paths("../grpc") {
         tonic_build::compile_protos(_path).unwrap();
     }
 }
